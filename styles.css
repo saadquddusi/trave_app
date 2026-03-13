@@ -16,6 +16,10 @@ button{background:var(--accent);color:#fff;border:none;padding:8px 12px;border-r
 .small-btn{background:#eee;color:#222;padding:6px 8px;border-radius:6px;border:none;cursor:pointer;margin-left:8px}
 footer{max-width:960px;margin:0 auto;padding:12px;color:var(--muted);font-size:13px}
 
+.share-controls{display:flex;gap:8px;margin-bottom:8px}
+#share-payload{width:100%;border:1px solid #ccc;border-radius:6px;padding:8px;font-family:monospace;resize:vertical}
+.hint{color:#555;font-size:13px;margin-top:4px}
+
 /* Dashboard styles */
 .dashboard{margin-bottom:18px}
 .dashboard-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
@@ -75,6 +79,15 @@ footer{max-width:960px;margin:0 auto;padding:12px;color:var(--muted);font-size:1
 	.passenger-card{padding:8px}
 	.badges{flex-wrap:wrap;gap:4px}
 	.badge{font-size:10px;padding:4px 6px}
+}
+
+@media print{
+	body{background:#fff;color:#000}
+	header, footer, .share-controls, #share-payload, .actions, .small-btn{display:none}
+	main{margin:0;padding:0}
+	.card{box-shadow:none;border:none}
+	.dashboard-grid{grid-template-columns:1fr}
+	.passenger-card{border:none;page-break-inside:avoid;margin-bottom:14px}
 }
 
 

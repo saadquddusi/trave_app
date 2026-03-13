@@ -265,6 +265,64 @@ function removeItem(key,id){
   save(key,items)
 }
 
+function getAllData(){
+  return {
+    flights: load(FLIGHT_KEY),
+    cars: load(CAR_KEY),
+    hotels: load(HOTEL_KEY),
+    passengerOrder: loadOrder(),
+  }
+}
+
+function setAllData(payload){
+  if(!payload || typeof payload !== 'object') return
+  if(Array.isArray(payload.flights)) save(FLIGHT_KEY,payload.flights)
+  if(Array.isArray(payload.cars)) save(CAR_KEY,payload.cars)
+  if(Array.isArray(payload.hotels)) save(HOTEL_KEY,payload.hotels)
+  if(Array.isArray(payload.passengerOrder)) saveOrder(payload.passengerOrder)
+  renderAll()
+}
+
+function setupShareControls(){
+  const exportBtn = document.getElementById('export-data')
+  const importBtn = document.getElementById('import-data')
+  const payloadField = document.getElementById('share-payload')
+
+  if(exportBtn){
+    exportBtn.addEventListener('click', ()=>{
+      const data = getAllData()
+      const json = JSON.stringify(data, null, 2)
+      payloadField.value = json
+      navigator.clipboard.writeText(json).catch(()=>{})
+      alert('Exported JSON to textarea (and clipboard when available).')
+    })
+  }
+
+  if(importBtn){
+    importBtn.addEventListener('click', ()=>{
+      let text = payloadField.value.trim()
+      if(!text){
+        alert('Paste JSON in the textarea first.')
+        return
+      }
+      try{
+        const payload = JSON.parse(text)
+        setAllData(payload)
+        alert('Data imported successfully.')
+      }catch(e){
+        alert('Invalid JSON: ' + e.message)
+      }
+    })
+  }
+
+  const printBtn = document.getElementById('print-data')
+  if(printBtn){
+    printBtn.addEventListener('click', ()=>{
+      window.print()
+    })
+  }
+}
+
 function formatDT(v){ if(!v) return ''
   try{ const d = new Date(v); return d.toLocaleString() }catch(e){return v}
 }
@@ -407,3 +465,4 @@ document.getElementById('hotel-form').addEventListener('submit', e=>{
 
 // initial render
 renderAll()
+setupShareControls()
