@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hawaii Trip</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Hawaii Trip</h1>
+      <p>Track flights and car reservations for your trip.</p>
+    </header>
+
+    <main>
+      <section class="card dashboard">
+        <h2>Passenger Dashboard</h2>
+        <div id="dashboard" class="dashboard-grid">
+          <!-- Passenger cards rendered here -->
+        </div>
+      </section>
+      <section class="card">
+        <h2>Flight Details</h2>
+        <form id="flight-form">
+          <div class="row">
+            <label>Passenger Name<input type="text" name="passenger" required /></label>
+            <label>Airline<input type="text" name="airline" required /></label>
+          </div>
+          <div class="row">
+            <label>Flight #<input type="text" name="flightNumber" required /></label>
+            <label>Confirmation #<input type="text" name="flightConf" /></label>
+          </div>
+          <div class="row">
+            <label>Departure airport<input type="text" name="depAirport" required /></label>
+            <label>Arrival airport<input type="text" name="arrAirport" required /></label>
+          </div>
+          <div class="row">
+            <label>Departure time<input type="datetime-local" name="depTime" required /></label>
+            <label>Arrival time<input type="datetime-local" name="arrTime" required /></label>
+          </div>
+          <div class="actions">
+            <button type="submit">Add Flight</button>
+          </div>
+        </form>
+
+        <h3>Saved Flights</h3>
+        <ul id="flight-list" class="list"></ul>
+      </section>
+
+      <section class="card">
+        <h2>Hotel Reservation</h2>
+        <form id="hotel-form">
+          <div class="row">
+            <label>Passenger Name<input type="text" name="passenger" required /></label>
+            <label>Hotel Name<input type="text" name="hotel" required /></label>
+            <label>Confirmation #<input type="text" name="hotelConf" /></label>
+          </div>
+          <div class="row">
+            <label>Address / Location<input type="text" name="location" /></label>
+          </div>
+          <div class="row">
+            <label>Check-in<input type="datetime-local" name="checkIn" required /></label>
+            <label>Check-out<input type="datetime-local" name="checkOut" required /></label>
+          </div>
+          <div class="actions">
+            <button type="submit">Add Hotel Reservation</button>
+          </div>
+        </form>
+
+        <h3>Saved Hotel Reservations</h3>
+        <ul id="hotel-list" class="list"></ul>
+      </section>
+
+      <section class="card">
+        <h2>Car Reservation</h2>
+        <form id="car-form">
+          <div class="row">
+            <label>Rental Company<input type="text" name="company" required /></label>
+            <label>Confirmation #<input type="text" name="confNumber" /></label>
+            <label>Passenger Name<input type="text" name="passenger" required /></label>
+          </div>
+          <div class="row">
+            <label>Pickup location<input type="text" name="pickupLoc" required /></label>
+            <label>Dropoff location<input type="text" name="dropoffLoc" required /></label>
+          </div>
+          <div class="row">
+            <label>Pickup time<input type="datetime-local" name="pickupTime" required /></label>
+            <label>Dropoff time<input type="datetime-local" name="dropoffTime" required /></label>
+          </div>
+          <div class="actions">
+            <button type="submit">Add Car Reservation</button>
+          </div>
+        </form>
+
+        <h3>Saved Car Reservations</h3>
+        <ul id="car-list" class="list"></ul>
+      </section>
+    </main>
+
+    <footer>
+      <small>Local-only demo — data saved in your browser.</small>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

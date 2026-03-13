@@ -1,0 +1,80 @@
+:root{--bg:#f7f8fb;--card:#ffffff;--accent:#0b6efd;--muted:#666}
+*{box-sizing:border-box;font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+body{margin:0;background:var(--bg);color:#111}
+header{padding:24px;text-align:center;background:linear-gradient(90deg,#06b6d4, #7c3aed);color:white}
+main{max-width:960px;margin:20px auto;padding:0 16px}
+.card{background:var(--card);padding:16px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06);margin-bottom:16px}
+.row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+label{flex:1;display:flex;flex-direction:column;font-size:14px}
+input,select,textarea{padding:8px;border:1px solid #ddd;border-radius:6px;font-size:14px}
+.actions{text-align:right}
+button{background:var(--accent);color:#fff;border:none;padding:8px 12px;border-radius:6px;cursor:pointer}
+.list{list-style:none;padding:0;margin:8px 0}
+.list li{padding:10px;border:1px solid #eee;border-radius:6px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center}
+.meta{color:var(--muted);font-size:13px}
+.time-label{font-weight:600;color:var(--accent);margin-right:2px}
+.small-btn{background:#eee;color:#222;padding:6px 8px;border-radius:6px;border:none;cursor:pointer;margin-left:8px}
+footer{max-width:960px;margin:0 auto;padding:12px;color:var(--muted);font-size:13px}
+
+/* Dashboard styles */
+.dashboard{margin-bottom:18px}
+.dashboard-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.passenger-card{background:linear-gradient(180deg,#fff,#fbfdff);padding:12px;border-radius:10px;border:1px solid #e6eefc;position:relative}
+.passenger-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;border-radius:10px 10px 0 0;background:linear-gradient(90deg,#06b6d4,#7c3aed)}
+.passenger-card h4{margin:0 0 8px 0;font-size:16px}
+.sublist{margin:6px 0;padding-left:14px}
+.section-title{font-weight:600;margin-top:8px}
+.section-flight{color:#0b6efd}
+.section-car{color:#16a34a}
+.section-hotel{color:#7c3aed}
+.sublist li{border:none;padding:6px 0;margin:0;display:block}
+.no-data{color:var(--muted);font-size:13px}
+.passenger-card h4{margin:0 0 8px 0;font-size:16px}
+.sublist{margin:6px 0;padding-left:14px}
+.section-title{font-weight:600;margin-top:8px}
+.section-flight{color:#0b6efd}
+.section-car{color:#16a34a}
+.section-hotel{color:#7c3aed}
+.sublist li{border:none;padding:6px 0;margin:0;display:block}
+.no-data{color:var(--muted);font-size:13px}
+
+/* Card header, avatar and badges */
+.card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.avatar{width:48px;height:48px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:white;background:linear-gradient(135deg,#06b6d4,#7c3aed);box-shadow:0 4px 12px rgba(124,58,237,0.18);font-size:16px}
+.card-title{flex:1;margin-left:10px;font-size:15px}
+.badges{display:flex;gap:6px;margin-left:8px}
+.badge{background:#eef6ff;color:#063b66;padding:6px 8px;border-radius:999px;font-size:12px;font-weight:600;box-shadow:0 2px 6px rgba(11,110,253,0.08)}
+
+/* Hover/interaction */
+.passenger-card{transition:transform .18s ease,box-shadow .18s ease}
+.passenger-card:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(11,110,253,0.08)}
+.passenger-card.drag-over{border:2px dashed var(--accent)}
+.sublist li{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.sublist li button.small-btn{margin-left:12px}
+
+/* Thumbnails and item layout */
+.thumb{width:48px;aspect-ratio:64/44;object-fit:contain;border-radius:6px;margin-right:10px;flex-shrink:0;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+/* constrain svg to viewBox and center */
+.thumb svg{width:100%;height:100%;display:block}
+.item-left{display:flex;align-items:center;gap:8px;flex:1}
+.form-actions{display:flex;gap:8px;align-items:center;justify-content:flex-end}
+
+/* small responsive tweaks */
+@media (max-width:520px){
+	.card-header{gap:8px}
+	.avatar{width:40px;height:40px;font-size:14px}
+	/* stack form inputs full width */
+	.row{flex-direction:column;gap:6px}
+	label{width:100%}
+	.actions, .form-actions{width:100%;text-align:center}
+	button{width:100%}
+}
+
+@media (max-width:360px){
+	/* make dashboard cards simpler */
+	.passenger-card{padding:8px}
+	.badges{flex-wrap:wrap;gap:4px}
+	.badge{font-size:10px;padding:4px 6px}
+}
+
+

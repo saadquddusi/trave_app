@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 44">
+  <rect width="100%" height="100%" fill="#f3f0ff" rx="8"/>
+  <!-- hotel building icon -->
+  <g transform="translate(4,8) scale(1.2)">
+    <rect x="8" y="8" width="48" height="28" fill="#7c3aed" rx="2"/>
+    <rect x="14" y="14" width="8" height="8" fill="#fff"/>
+    <rect x="26" y="14" width="8" height="8" fill="#fff"/>
+    <rect x="38" y="14" width="8" height="8" fill="#fff"/>
+    <path d="M8 8 L32 0 L56 8 Z" fill="#5b21b6"/>
+  </g>
+</svg>
