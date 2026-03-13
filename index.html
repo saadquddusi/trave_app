@@ -13,6 +13,16 @@
     </header>
 
     <main>
+      <section class="card">
+        <h2>Share / Restore Data</h2>
+        <div class="share-controls">
+          <button id="export-data" type="button">Export JSON</button>
+          <button id="import-data" type="button">Import JSON</button>
+          <button id="print-data" type="button">Print</button>
+        </div>
+        <textarea id="share-payload" rows="5" placeholder="Paste or copy JSON here"></textarea>
+        <div class="hint">Use this to share data with others (copy after export, paste before import).</div>
+      </section>
       <section class="card dashboard">
         <h2>Passenger Dashboard</h2>
         <div id="dashboard" class="dashboard-grid">
